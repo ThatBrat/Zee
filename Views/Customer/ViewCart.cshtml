@@ -1,0 +1,49 @@
+@using Zee.DTOs.RequestModels
+@model Zee.DTOs.ResponseModels.CartResponseModel
+ <div class="row">
+        <div class="col-md-12">
+            <h2>View Cart</h2>
+            <form asp-action="View Cart">
+                <table class="table-class">
+                    <tr>
+                        <th>S/N</th>
+                        <th>PRODUCT NAME</th>
+                        <th>QUANTITY</th>
+                        <th>PRICE</th>
+                        <th>IMAGE</th>
+                        <th></th>
+                    </tr>
+                    @{
+                        int count = 1;
+                    }
+                    @foreach (var item in @Model.Data.Items)
+                    {
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.Price</td>
+                            <td>@item.ImageUrl</td>
+                            <td><a  class="update btn-warning btn" asp-controller="Order" asp-action="CheckOut"asp-route-cartItemId="@item.Id">CheckOut</a></td>
+                            <td><a  class="update btn-warning btn" asp-controller="Customer" asp-action="Delete" asp-route-cartItemId=@item.Id>Delete</a></td>
+                           
+                           
+                            @{
+                                count ++;
+                            }
+                        </tr>
+                    }
+                </table>
+            
+        
+
+                <footer class="footer-container">
+                    &copy; 2022 GetItAll || All Rights Reserved
+                </footer>
+            </form>
+        </div>
+                 
+    </div>
+
+
+    

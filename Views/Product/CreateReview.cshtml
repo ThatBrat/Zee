@@ -1,0 +1,19 @@
+@using Zee.DTOs
+@model Zee.DTOs.RequestModels.CreateReviewRequestModel
+
+@{
+    ViewData["Title"] = "Create Review Page";
+}
+
+
+
+<form >
+        <div class="registration-container">
+            <textarea  for="Message" name="Message"  type="text" placeholder="Comment" row="5" cols="50" placeholder="Message"></textarea>
+            <input for="NoOfStars" name="NoOfStars"  type="number" placeholder="Number of Stars">
+        <div >
+            <button>Submit</button>
+        </div>
+    </form>
+   
+    

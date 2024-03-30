@@ -1,0 +1,10 @@
+@using Zee.DTOs.ResponseModels
+@model CartItemResponseModel
+
+<div class="btn-group" >
+        
+        <span>Are you sure you want to delete?</span>
+        
+        <a  class="btn-danger btn" asp-controller="Customer" asp-route-cartItemId=@Model.Data.Id asp-action="DeleteCartItem" >Delete</a> 
+        <a class="btn-danger btn" asp-controller="Customer"  asp-action="ViewCart">Back</a>
+    </div>

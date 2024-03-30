@@ -1,0 +1,12 @@
+@using Zee.DTOs.ResponseModels
+@model Zee.DTOs.ResponseModels.SellerResponseModel
+
+
+ <div class="btn-group" >
+        
+        <span>Are you sure you want to delete?</span>
+          
+        <a  class="btn-danger btn" asp-controller="Admin" asp-route-sellerId=@Model.Data.UserDto.Id asp-action="DeleteSeller" >Delete</a>
+        <a class="btn-danger btn" asp-controller="Admin"  asp-action="GetAllSellers">Back</a>
+    </div>
+

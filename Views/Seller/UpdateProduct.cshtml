@@ -1,0 +1,26 @@
+@using Zee.DTOs.RequestModels
+@model Zee.DTOs.ResponseModels.ProductResponseModel
+
+
+
+
+
+
+<form asp-route-productId="@Model.Data.Id" asp-controller="Seller" asp-action="UpdateProduct" method="post">
+        <div class="registration-container">
+            <input  for="ProductName" name="ProductName"  type="text" value="@Model.Data.ProductName" placeholder="Product Name">
+            <input for="Price" name="Price"  type="number" value="@Model.Data.Price" placeholder="Price">
+            </div>
+            <input value="@Model.Data.InitialQuantity" for="InitialQuantity" name="InitialQuantity"  type="number" placeholder="Quantity" >
+            <input for="ImageUrl" name="ImageUrl"  type="text" value="@Model.Data.ImageUrl" placeholder="Image Url">
+            </div>
+
+        <div class="button-container Register">
+            <button>Submit</button>
+        </div>
+        
+    </form>
+
+    
+    
+   

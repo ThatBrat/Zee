@@ -1,0 +1,23 @@
+@using Zee.DTOs.RequestModels
+@model Zee.DTOs.ResponseModels.AdminResponseModel
+
+
+
+
+
+<form class="all-container"  asp-action="Update" method="post">
+        <div class="registration-container">
+            <input  for="FirstName" name="FirstName"  type="text" value="@Model.Data.Admin.FirstName" placeholder="First Name">
+            <input for="LastName" name="LastName"  type="text" value="@Model.Data.Admin.LastName" placeholder="Last Name">
+            </div>
+            <input value="@Model.Data.Admin.PhoneNumber" for="PhoneNumber" name="PhoneNumber"  type="text" placeholder="Phone Number" maxlength="11">
+            <input  for="AccountNumber" name="AccountNumber"  type="text" value="@Model.Data.AccountNumber" placeholder="Account Number">
+            
+            </div>
+
+        <div class="button-container Register">
+            <button>Submit</button>
+        </div>
+    </form>
+    
+   

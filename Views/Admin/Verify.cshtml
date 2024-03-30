@@ -1,0 +1,11 @@
+@using Zee.DTOs.ResponseModels
+@model Zee.DTOs.ResponseModels.SellerResponseModel
+
+
+ <div class="btn-group" >
+        
+        <span>Are you sure you want to verify?</span>
+        
+        <a  class="btn-danger btn" asp-controller="Admin" asp-route-id=@Model.Data.UserDto.Id asp-action="VerifySeller" >Verify</a> 
+        <a class="btn-danger btn" asp-controller="Admin"  asp-action="GetAllSellers">Back</a>
+    </div>

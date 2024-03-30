@@ -1,0 +1,47 @@
+@using Zee.DTOs.RequestModels
+@model Zee.DTOs.ResponseModels.ProductsResponseModel
+ <div class="row">
+        <div class="col-md-12">
+            <h2>Get Products</h2>
+            <form asp-action="GetAllProducts">
+                <table class="table-class">
+                    <tr>
+                        <th>S/N</th>
+                        <th>PRODUCT NAME</th>
+                        <th>PRICE</th>
+                        <th>QUANTITY</th>
+                        <th>INITIAL QUANTITY</th>
+                        <th></th>
+                    </tr>
+                    @{
+                        int count = 1;
+                    }
+                    @foreach (var item in @Model.Data)
+                    {
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.Price</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.InitialQuantity</td>
+                            <td><a id="@item.Id" class="update btn-warning btn" asp-controller="Seller" asp-action="UpdateProduct" asp-route-productId=@item.Id>Update</a></td>
+                            @{
+                                count ++;
+                            }
+                        </tr>
+                    }
+                </table>
+                
+            
+        
+
+                <footer class="footer-container">
+                    &copy; 2022 GetItAll || All Rights Reserved
+                </footer>
+            </form>
+        </div>
+                 
+    </div>
+
+
+    

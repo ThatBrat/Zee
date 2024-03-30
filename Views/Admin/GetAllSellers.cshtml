@@ -1,0 +1,59 @@
+@using Zee.DTOs.RequestModels
+@model Zee.DTOs.ResponseModels.SellersResponseModel
+
+ <div class="row">
+        <div class="col-md-12">
+            <h2>Get Sellers</h2>
+            <form asp-action="GetAllSellers">
+                <table class="table-class">
+                    <tr>
+                        <th>S/N</th>
+                        <th>FULL NAME</th>
+                        <th>STORE NAME</th>
+                        <th>ADDRESS</th>
+                        <th>ACCOUNT NUMBER</th>
+                        <th></th>
+                    </tr>
+                    @{
+                        int count = 1;
+                    }
+                    @foreach (var item in @Model.Data)
+                    {
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.UserDto.LastName @item.UserDto.FirstName</td>
+                            <td>@item.StoreName</td>
+                            <td>@item.Address.HouseNumber, @item.Address.StreetName Street, @item.Address.LGA, @item.Address.Town, @item.Address.State State, @item.Address.Country.
+       </td>
+                            <td>@item.AccountNumber</td>
+                            <td>@if(item.IsVerified == false)
+                            {
+                                <a  class="update btn-warning btn" asp-controller="Admin" asp-action="Verify" asp-route-id=@item.UserDto.Id>Verify</a>
+                            } 
+                            else
+                            {
+                                <a  class="update btn-warning btn">Verified</a>
+                            }  
+                            </td>
+                            <td><a  class="update btn-warning btn" asp-controller="Admin" asp-action="Delete" asp-route-sellerId=@item.UserDto.Id>Delete</a></td>
+                            @{
+                                count ++;
+                            }
+                        </tr>
+                    }
+                   
+                </table>
+                
+            
+        
+
+                <footer class="footer-container">
+                    &copy; 2022 GetItAll || All Rights Reserved
+                </footer>
+            </form>
+        </div>
+                 
+    </div>
+
+
+    

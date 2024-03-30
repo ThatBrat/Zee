@@ -1,0 +1,39 @@
+@using Zee.DTOs.ViewModels
+@model ProductCartItemViewModel
+
+@{
+    ViewData["Title"] = "Add to Cart Page";
+}
+
+@* <div>
+    <h3>Product Details:</h3>
+    <p><strong>Name:</strong> @Model.Product.Data.ProductName</p>
+    <p><strong>Price:</strong> $@Model.Product.Data.Price</p>
+    
+</div> *@
+
+<div>
+    <h3>Add to Cart:</h3>
+    <form method="post" action="/Customer/AddToCart"> 
+        <input type="hidden" name="ProductId" value="@Model.Product.Data.Id">
+        
+        @if (Model.Product.Data != null)
+        {
+            <input for="CartItem.ProductName" name="CartItem.ProductName" type="text" value="@Model.Product.Data.ProductName" readonly>
+            <input for="CartItem.Price" name="CartItem.Price" type="number" value="@Model.Product.Data.Price" readonly>
+        }
+        else
+        {
+            <p>Product information not available.</p>
+        }
+        
+        <input type="number" for="CartItem.Quantity" name="quantity" placeholder="Quantity" id="quantity" value="1" required>
+        <input type="submit" value="Add to Cart">
+    </form>
+</div>
+
+
+       
+ 
+   
+    

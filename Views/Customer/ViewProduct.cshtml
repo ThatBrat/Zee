@@ -1,0 +1,54 @@
+@using Zee.DTOs.ViewModels
+@model ProductReviewViewModel
+@{
+    Layout = "";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product Page</title>
+</head>
+
+
+<div class="info">
+    <div>
+        <label>
+            PRODUCT NAME:@Model.product.Data.ProductName 
+        </label>
+    </div>
+
+    <div>
+        <label>
+            PRICE: @Model.product.Data.Price
+        </label>
+    </div>
+
+
+    <div>
+        <label>
+            IMAGE URL: @Model.product.Data.ImageUrl
+        </label>
+    </div>
+
+    <div><a  class="btn-danger btn" asp-controller="Customer"  asp-action="AddToCart" asp-route-productId=@Model.product.Data.Id>Add to Cart</a></div>    
+</div>
+
+@* @model Zee.DTOs.ResponseModels.ReviewsResponseModel *@
+@* @foreach(var item in ((ReviewsResponseModel)ViewBag.ReviewsModel).Data)
+{
+    <span>@item.CustomerDto.UserDto.FirstName: @item.Message, @item.NoOfStars </span> 
+} *@
+
+
+
+<footer class="footer-container">
+            &copy;  2022 GetItAll || All Rights Reserved
+     </footer>
+

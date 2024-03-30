@@ -1,0 +1,45 @@
+@using Zee.DTOs.RequestModels
+@model Zee.DTOs.ResponseModels.DispatchesResponseModel
+ <div class="row">
+        <div class="col-md-12">
+            <h2>Get Dispatches</h2>
+            <form asp-action="GetDispatches">
+                <table class="table-class">
+                    <tr>
+                        <th>S/N</th>
+                        <th>FULL NAME</th>
+                        <th>EMAIL</th>
+                        <th>PHONE NUMBER</th>
+                        <th></th>
+                    </tr>
+                    @{
+                        int count = 1;
+                    }
+                    @foreach (var item in @Model.Data)
+                    {
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.UserDto.LastName @item.UserDto.FirstName</td>
+                            <td>@item.UserDto.Email</td>
+                            <td>@item.UserDto.PhoneNumber</td>
+                            <td><a  class="update btn-warning btn" asp-controller="Seller" asp-action="Delete" asp-route-email=@item.UserDto.Email>Delete</a></td>
+                           
+                            @{
+                                count ++;
+                            }
+                        </tr>
+                    }
+                </table>
+            
+        
+
+                <footer class="footer-container">
+                    &copy; 2022 GetItAll || All Rights Reserved
+                </footer>
+            </form>
+        </div>
+                 
+    </div>
+
+
+    

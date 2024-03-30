@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Login Page";
+}
+@if(TempData["Message"] != null)
+{
+    <h4>@TempData["Message"]</h4>
+}
+
+
+<form  method="post" asp-action="SignIn">
+        <div>
+           <input for="Email" name="Email"  type="email" placeholder="Email">        
+            <input for="Password" name="Password"  type="password" placeholder="Password">
+        </div>
+
+    <div>
+        <button>Log in</button>
+    </div>
+    </form>
+
+
+    
